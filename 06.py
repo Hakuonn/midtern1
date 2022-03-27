@@ -1,20 +1,16 @@
 value=input("輸入值為:").split(",")
 min0=''
 max0=''
-x=0
+value_int=list(map(int,value))
+value_int.sort()
+value_int=list(map(str,value_int))
 for i in range(len(value)):
-    value[i]=int(value[i])
-value.sort()
+    min0+=value_int[i]
+
+value_int=list(map(int,value_int))
+value_int.reverse()
+value_int=list(map(str,value_int))
 for i in range(len(value)):
-    value[i]=str(value[i])
-for i in range(len(value)):
-    min0+=value[i]
-for i in range(len(value)):
-    value[i]=int(value[i])
-value.reverse()
-for i in range(len(value)):
-    value[i]=str(value[i])
-for i in range(len(value)):
-    max0+=value[i]
-x=int(max0)-int(min0)
-print("最大值數列與最小值數列差值為:",x)
+    max0+=value_int[i]
+
+print("最大值數列與最小值數列差值為:%d" %(int(max0)-int(min0)))
